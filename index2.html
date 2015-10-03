@@ -1,0 +1,100 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Theme-02</title>
+<link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css' />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="wrapper">
+  <div class="logo">QUEEN OF HEARTS</div>
+</p>
+</div>
+<div class="panels-container">
+  <div class="panel-wrapper">
+    <div class="panel"> <img src="images/heart.jpg" alt="themedemic" />
+      <h1>CVD Prevention Tips</h1>
+      <ul>
+        <li class="panel-top"></li>
+        <li class="panel-middle">
+          <p>-You can die from heart disease-</p>
+          <a href="prevention_tips.html" target="iframe_a">Share Fact -></a> </li>
+        <li class="panel-bottom"></li>
+      </ul>
+    </div>
+    <div class="panel"> <img src="images/heart.jpg" alt="themedemic" />
+      <h1>Heart Tracker</h1>
+      <ul>
+        <li class="panel-top"></li>
+        <li class="panel-middle">
+          <p>Track your health starting today!! </p>
+           <a href="heartTracking.html" target="iframe_a">Track -></a> </li>
+        <li class="panel-bottom"></li>
+      </ul>
+    </div>
+    <div class="panel"> <img src="images/heart.jpg" alt="themedemic" />
+      <h1>Healthy Heart Checklist</h1>
+      <ul>
+        <li class="panel-top"></li>
+        <li class="panel-middle">
+          <p>Keep check for yourself.</p>
+          <a href="Checklist.html" target="iframe_a">Check it out -></a> </li>
+        <li class="panel-bottom"></li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+
+<div style="width:100%; height:90%; background-color:transparent;">
+    <!--<iframe src="prevention_tips.html" name="iframe_a" style="width:100%; height:100%; border:none;">
+    </iframe> -->
+    <iframe name="iframe_a" src="prevention_tips.html" frameborder="0" scrolling="no" id="iframe" onload='javascript:resizeIframe(this);' />
+    <iframe onload='javascript:resizeIframe(this);'></iframe>
+</div>
+
+
+<div class="footer">
+  <div class="copy-rights">CSULA Codeathon,  #FIGHTTHELADYKILLER</div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#tips-btn").click(function(){
+        $("#data-input").hide();
+        $("#checklist-info").hide();
+        $("#tips-info").show();
+        $('html,body').animate({
+          scrollTop: $("#tips-info").offset().top
+        });
+    });
+    $("#track-btn").click(function(){
+        $("#tips-info").hide();
+        $("#checklist-info").hide();
+        $("#data-input").show();
+        $('html,body').animate({
+          scrollTop: $("#data-input").offset().top
+        });
+    });
+    $("#checklist-btn").click(function(){
+        $("#tips-info").hide();
+        $("#data-input").hide();
+        $("#checklist-info").show();
+        $('html,body').animate({
+          scrollTop: $("#checklist-info").offset().top
+        });
+    });
+});
+</script>
+<script type="text/javascript">
+  function resizeIframe(obj){
+     {obj.style.height = 0;};
+     {obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';}
+  }
+</script>
+</html>
