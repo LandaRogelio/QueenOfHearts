@@ -1,0 +1,40 @@
+  <html>
+  <head>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+  
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+      
+      
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['datetime', 'Total Cholestrol', 'LDL (Bad) Cholestrol', 'HDL (Good) Cholestrol', 'Triglycerides', 'Blood Pressure', 'Fasting Glucose', 'BMI', 'Waist (Inches)', 'Excerise (Minutes)'],
+          [new Date(1995, 9, 29), 25, 10, 50, 90, 30, 25, 10, 5, 0],
+          [new Date(2000, 9, 29), 50, 30, 70, 40, 50, 75, 30, 15, 5],
+          [new Date(2005, 9, 29), 70, 50, 20, 60, 10, 55, 40, 35, 20]
+        ]);
+
+        var options = {
+          title: "Patient's Medical Numbers",
+          curveType: 'function',
+          legend: { position: 'right' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
