@@ -30,6 +30,53 @@ a.more-button:hover {
 	text-decoration:none;
 }
 
+/*-----------------------------------------------
+Log in components
+---------------------------------------------*/
+.login-wrapper {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.btn {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    border:none;
+	font-family: "Arial";
+}
+
+.btn:hover {
+    border: none;
+    box-shadow: 0px 0px 1px #777;
+
+}
+.btn-default {
+    background-color: white;
+	color: #800000;
+}
+
+.btn.default:hover {
+    background-color: #ccf;
+}
+
+.btn-primary {
+	background-color: #800000
+}
+
+.btn-primary:hover {
+	background-color: #f30;
+}
+
 /*-------------------------------------------------
 body sytles start
 -------------------------------------------------*/
