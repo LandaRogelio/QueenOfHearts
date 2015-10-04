@@ -493,6 +493,6 @@ input {
 	outline: none;
 }
 
-#data-input, #checklist-info{
+#data-input, #checklist-info, #doclist-list{
 	display: none;
 }
