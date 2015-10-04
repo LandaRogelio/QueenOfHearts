@@ -11,13 +11,15 @@
   
     <script type="text/javascript">
       google.setOnLoadCallback(drawChart);
+      
+      
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Date', 'Total Cholestrol', 'LDL (Bad) Cholestrol', 'HDL (Good) Cholestrol', 'Triglycerides', 'Blood Pressure', 'Fasting Glucose', 'BMI', 'Waist (Inches)', 'Excerise (Minutes)', 'Smoking (Months)'],
-          ['10/29/1992', 25, 10, 50, 90, 30, 25, 10, 5, 0, 0],
-          ['10/29/1997', 50, 30, 70, 40, 50, 75, 30, 15, 5, 0],
-          ['10/29/2000', 70, 50, 20, 60, 10, 55, 40, 35, 20, 10]
+          ['datetime', 'Total Cholestrol', 'LDL (Bad) Cholestrol', 'HDL (Good) Cholestrol', 'Triglycerides', 'Blood Pressure', 'Fasting Glucose', 'BMI', 'Waist (Inches)', 'Excerise (Minutes)'],
+          [new Date(1995, 9, 29), 25, 10, 50, 90, 30, 25, 10, 5, 0],
+          [new Date(2000, 9, 29), 50, 30, 70, 40, 50, 75, 30, 15, 5],
+          [new Date(2005, 9, 29), 70, 50, 20, 60, 10, 55, 40, 35, 20]
         ]);
 
         var options = {
