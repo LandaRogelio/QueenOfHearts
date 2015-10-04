@@ -4,9 +4,101 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<title>Theme-02</title>
+<title>QUEEN OF HEARTS APP</title>
 <link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css' />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+    function clear_fields(){
+      document.getElementById("date").value = "";
+      document.getElementById("totalcholesterol").value = "";
+      document.getElementById("LDL").value = "";
+      document.getElementById("HDL").value = "";
+      document.getElementById("trig").value = "";
+      document.getElementById("systolic").value = "";
+      document.getElementById("diastolic").value = "";
+      document.getElementById("fastingglucose").value = "";
+      document.getElementById("BMI").value = "";
+      document.getElementById("exercise").value = "";
+      document.getElementById("smoker").value = "";
+      document.getElementById("smoker").checked = false;
+    }
+
+    function validate(){
+      if(document.getElementById("totalcholesterol").value > 200){
+        document.getElementById("totalcolor").style.color = "#ff0000";
+        var tip = document.getElementById("cholesteroltip");
+        tip.innerHTML = "TIP: Limit your intake of foods full of saturated fats, trans fats, and dietary cholesterol";
+        document.getElementById("cholesteroltip").style.color = "#0000FF";
+      }
+
+      if(document.getElementById("LDL").value > 100){
+        document.getElementById("LDLcolor").style.color = "#ff0000";
+        var tip = document.getElementById("LDLtip");
+        tip.innerHTML = "TIP: Avoid trans fats";
+        document.getElementById("LDLtip").style.color = "#0000FF";
+      }
+
+      if(document.getElementById("HDL").value < 50){
+        document.getElementById("HDLcolor").style.color = "#ff0000";
+        var tip = document.getElementById("HDLtip");
+        tip.innerHTML = "TIP: Drinking moderate amounts of alcohol";
+        document.getElementById("HDLtip").style.color = "#0000FF";
+      }
+
+      if(document.getElementById("trig").value > 150){
+        document.getElementById("trigcolor").style.color = "#ff0000";
+        var tip = document.getElementById("trigtip");
+        tip.innerHTML = "Trig TIP";
+        document.getElementById("trigtip").style.color = "#0000FF";
+
+      }
+
+      if(document.getElementById("systolic").value > 150 || document.getElementById("diastolic").value > 90){
+        document.getElementById("bloodpressurecolor").style.color = "#ff0000";
+        var tip1 = document.getElementById("systolictip");
+        var tip2 = document.getElementById("diastolictip");
+
+        tip1.innerHTML = "systolic tip!!!";
+        tip2.innerHTML = "diastolic tip!!!";
+        document.getElementById("systolictip").style.color = "#0000FF";
+        document.getElementById("diastolictip").style.color = "#0000FF";
+        
+      }
+
+      if(document.getElementById("fastingglucose").value > 99){
+        document.getElementById("fastingglucosecolor").style.color = "#ff0000";
+        var tip = document.getElementById("fastingglucosetip");
+        tip.innerHTML = "fastingglucosecolor tip!!";
+        document.getElementById("fastingglucosetip").style.color = "#0000FF";
+      }
+
+      if(document.getElementById("BMI").value > 25 || document.getElementById("BMI").value < 18.5){
+        document.getElementById("BMIcolor").style.color = "#ff0000";
+        var tip = document.getElementById("BMItip");
+        tip.innerHTML = "BMI TIP!";
+        document.getElementById("BMItip").style.color = "#0000FF";
+      }
+
+      if(document.getElementById("exercise").value < 30){
+        document.getElementById("exercisecolor").style.color = "#ff0000";
+        var tip = document.getElementById("exercisetip");
+        tip.innerHTML = "exercise tip!!";
+        document.getElementById("exercisetip").style.color = "#0000FF";
+      }
+
+      if(document.getElementById("smoker").checked){
+        document.getElementById("smokercolor").style.color = "#ff0000";
+        var tip = document.getElementById("smokertip");
+        tip.innerHTML = "Stop smoking now!!!";
+        document.getElementById("smokertip").style.color = "#0000FF";
+      }
+
+    
+    }
+
+
+</script>
 </head>
 <body>
 <div class="wrapper">
@@ -21,27 +113,37 @@
         <li class="panel-top"></li>
         <li class="panel-middle">
           <p>-You can die from heart disease-</p>
-          <a href="#" id = "tips-btn">Share Fact -></a> </li>
+          <a href="#" id = "tips-btn">Prevention Tips</a> </li>
         <li class="panel-bottom"></li>
       </ul>
     </div>
     <div class="panel"> <img src="images/heart.jpg" alt="themedemic" />
-      <h1>Heart Tracker</h1>
+      <h1>Heart Tracker Tool</h1>
       <ul>
         <li class="panel-top"></li>
         <li class="panel-middle">
           <p>Track your health starting today!! </p>
-          <a href="#" id = "track-btn">Track -></a> </li>
+          <a href="#" id = "track-btn">Tracker Tool</a> </li>
         <li class="panel-bottom"></li>
       </ul>
     </div>
     <div class="panel"> <img src="images/heart.jpg" alt="themedemic" />
-      <h1>Healthy Heart Checklist</h1>
+      <h1>Questions to Ask Your Doctor</h1>
       <ul>
         <li class="panel-top"></li>
         <li class="panel-middle">
           <p>Keep check for yourself.</p>
-          <a href="#" id = "checklist-btn">Check it out -></a> </li>
+          <a href="#" id = "doclist-btn">Check it out</a> </li>
+        <li class="panel-bottom"></li>
+      </ul>
+    </div>
+    <div class="panel"> <img src="images/heart.jpg" alt="themedemic" />
+      <h1>Daily "To DO" List</h1>
+      <ul>
+        <li class="panel-top"></li>
+        <li class="panel-middle">
+          <p>List of daily tips that can help you lower your risk.</p>
+          <a href="#" id = "checklist-btn">Daily Tips</a> </li>
         <li class="panel-bottom"></li>
       </ul>
     </div>
@@ -114,8 +216,8 @@
 
       <div class="left-column-panel">
 
-        <!-- start heart checklist -->
-        <div id = "checklist-info">
+        <!-- start heart doclist -->
+        <div id = "doclist-info">
           <div class="left-column-panel-middle">
             <h1>Doctor Checklist: </h1>
             <div class="sub-menu">
@@ -164,7 +266,7 @@
                 <div class="form-group ">
                   <div class="col-md-5">
                     <input name="packersOff" class="strikethrough" value="1" type="checkbox">
-                    <label for="packersOff" class="strikeThis">Calulate you 10-year and Lifetime Risk for Heart Disease</label>
+                    <label for="packersOff" class="strikeThis">Calulate your 10-year and Lifetime Risk for Heart Disease</label>
                   </div>
                 </div>
               </li>
@@ -172,8 +274,75 @@
           </div>
         </div>
       </div>
+      <!-- end heart doclist-->
+      <!-- start heart checklist -->
+      <div id = "checklist-info">
+        <div class="left-column-panel-middle">
+          <h1>To Do: </h1>
+          <div class="sub-menu">
+            <ul>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">Schedule Appointment</label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">Eat Healthy Breakfast</label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">Eat Healthy Lunch</label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">Eat Healthy Dinner</label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">Excercise Atleast 30 Minutes</label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">Kids Soccer Practice</label>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="form-group ">
+                  <div class="col-md-5">
+                    <input name="packersOff" class="strikethrough" value="1" type="checkbox">
+                    <label for="packersOff" class="strikeThis">8 Hours of Sleep</label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+       </div>
+      </div>
       <!-- end heart checklist-->
-
       <!-- start heart tracker -->
       <div id = "data-input">
         <div class="left-column-panel-middle">
@@ -181,18 +350,40 @@
           <div class="sub-menu">
             <ul>
               <li><a href="#">Today's Date: </a>
-              <input type="text" name="date" size="10" maxlength="10" /></li>
-              <li><a href="#">Total Cholesterol: </a>
-              <input type="text" name="totalcholesterol" size="3" maxlength="3" /></li>
-              <li><a href="#">LDL "BAD" Cholesterol: </a>
-              <input type="text" name="badcholesterol" size="3" maxlength="3" /></li>
-              <li><a href="#">HDL "GOOD" Cholesterol: </a>
-              <input type="text" name="goodcholesterol" size="3" maxlength="3"></li>
-              <li><a href="#">Triglycerides: </a>
-              <input type="text" name="trig" size="3" maxlength="3"></li>
-              <li><a href="#">Blood Pressure: </a>
-              <input type="text" size="3" maxlength="3"></li>
-              
+              <input type="text" id="date" size="10" maxlength="10" /></li>
+              <li><a href="#" id="totalcolor" >Total Cholesterol:</a>
+              <input type="text" size="3" maxlength="3" id="totalcholesterol"/></li>
+              <p id="cholesteroltip"></p>
+              <li><a href="#" id="LDLcolor">LDL "BAD" Cholesterol: </a>
+              <input type="text" name="badcholesterol" size="3" maxlength="3" id="LDL"/></li>
+              <p id="LDLtip"></p>
+              <li><a href="#" id="HDLcolor">HDL "GOOD" Cholesterol: </a>
+              <input type="text" size="3" maxlength="3" id="HDL"></li>
+              <p id="HDLtip"></p>
+              <li><a href="#" id="trigcolor">Triglycerides: </a>
+              <input type="text" id="trig" size="3" maxlength="3"></li>
+              <p id="trigtip"></p>
+              <li>
+              <a href="#" id="bloodpressurecolor">Blood Pressure:</a>
+              <input type="text" size="3" maxlength="3" id="systolic"> / <input type="text" size="3" maxlength="3" id="diastolic">
+              </li>
+              <p id="systolictip"></p>
+              <p id="diastolictip"></p>
+              <li><a href="#" id="fastingglucosecolor">Fasting Glucose: </a>
+              <input type="text" size="3" maxlength="3" id="fastingglucose"></li>
+              <p id="fastingglucosetip"></p>
+              <li><a href="#" id="BMIcolor">BMI: </a>
+              <input type="text" size="3" maxlength="3" id="BMI"></li>
+              <p id="BMItip"></p>
+              <li><a href="#" id="exercisecolor">Exercise: </a>
+              <input type="text" size="3" maxlength="3" id="exercise"></li>
+              <p id="exercisetip"></p>
+              <li><a href="#" id="smokercolor">SMOKER:  </a>
+              <input type="checkbox" id="smoker"></li>
+              <p id="smokertip"></p>
+              <button type="button" onclick="validate()">Submit </button>
+              <button type="button" onclick="clear_fields()">Clear</button>
+
             </ul>
           </div>
         </div>
@@ -215,6 +406,7 @@ $(document).ready(function(){
     $("#tips-btn").click(function(){
         $("#data-input").hide();
         $("#checklist-info").hide();
+        $("#doclist-info").hide();
         $("#tips-info").show();
         $('html,body').animate({
           scrollTop: $("#tips-info").offset().top
@@ -223,14 +415,25 @@ $(document).ready(function(){
     $("#track-btn").click(function(){
         $("#tips-info").hide();
         $("#checklist-info").hide();
+        $("#doclist-info").hide();
         $("#data-input").show();
         $('html,body').animate({
           scrollTop: $("#data-input").offset().top
         });
     });
+    $("#doclist-btn").click(function(){
+        $("#tips-info").hide();
+        $("#data-input").hide();
+        $("#checklist-info").hide();
+        $("#doclist-info").show();
+        $('html,body').animate({
+          scrollTop: $("#doclist-info").offset().top
+        });
+    });
     $("#checklist-btn").click(function(){
         $("#tips-info").hide();
         $("#data-input").hide();
+        $("#doclist-info").hide();
         $("#checklist-info").show();
         $('html,body').animate({
           scrollTop: $("#checklist-info").offset().top
