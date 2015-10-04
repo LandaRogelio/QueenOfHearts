@@ -6,6 +6,48 @@
 <title>Theme-02</title>
 <link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css' />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+
+    function validate(){
+      if(document.getElementById("totalcholesterol").value > 200){
+        document.getElementById("totalcolor").style.color = "#ff0000";
+      }
+
+      if(document.getElementById("LDL").value > 100){
+        document.getElementById("LDLcolor").style.color = "#ff0000";      
+      }
+
+      if(document.getElementById("HDL").value < 50){
+        document.getElementById("HDLcolor").style.color = "#ff0000";
+      }
+
+      if(document.getElementById("trig").value > 150){
+        document.getElementById("trigcolor").style.color = "#ff0000";
+      }
+
+      if(document.getElementById("systolic").value > 150 || document.getElementById("diastolic").value > 90){
+        document.getElementById("bloodpressurecolor").style.color = "#ff0000";
+        
+      }
+
+      if(document.getElementById("fastingglucose").value > 99){
+        document.getElementById("fastingglucosecolor").style.color = "#ff0000";
+      }
+
+      if(document.getElementById("BMI").value > 25 || document.getElementById("BMI").value < 18.5){
+        document.getElementById("BMIcolor").style.color = "#ff0000";
+      }
+
+      if(document.getElementById("exercise").value < 30){
+        document.getElementById("exercisecolor").style.color = "#ff0000";
+      }
+
+      if(document.getElementById("smoker").checked){
+        document.getElementById("smokercolor").style.color = "#ff0000";
+      }
+    
+    }
+</script>
 </head>
 <body>
 <div class="wrapper">
@@ -48,28 +90,41 @@
   </div>
 </div>
 
-<div class="columns-container">
-  <div class="columns-wrapper">
-    <div class="middle-column">
+<!--                                                  -->
+<div class="columns-container" >
+  <div class="columns-wrapper" >
+    <div class="middle-column" >
 
-      <div class="left-column-panel">
-        <div class="left-column-panel-middle">
+      <div class="left-column-panel" align="center">
+        <div class="left-column-panel-middle" align="left">
+        
           <h1>ENTER HEART DATA: </h1>
           <div class="sub-menu">
             <ul>
               <li><a href="#">Today's Date: </a>
               <input type="text" name="date" size="10" maxlength="10" /></li>
-              <li><a href="#">Total Cholesterol: </a>
-              <input type="text" name="totalcholesterol" size="3" maxlength="3" /></li>
-              <li><a href="#">LDL "BAD" Cholesterol: </a>
-              <input type="text" name="badcholesterol" size="3" maxlength="3" /></li>
-              <li><a href="#">HDL "GOOD" Cholesterol: </a>
-              <input type="text" name="goodcholesterol" size="3" maxlength="3"></li>
-              <li><a href="#">Triglycerides: </a>
-              <input type="text" name="trig" size="3" maxlength="3"></li>
-              <li><a href="#">Blood Pressure: </a>
-              <input type="text" size="3" maxlength="3"></li>
-              
+              <li><a href="#" id="totalcolor" >Total Cholesterol:</a>
+              <input type="text" size="3" maxlength="3" id="totalcholesterol"/></li>
+              <li><a href="#" id="LDLcolor">LDL "BAD" Cholesterol: </a>
+              <input type="text" name="badcholesterol" size="3" maxlength="3" id="LDL"/></li>
+              <li><a href="#" id="HDLcolor">HDL "GOOD" Cholesterol: </a>
+              <input type="text" size="3" maxlength="3" id="HDL"></li>
+              <li><a href="#" id="trigcolor">Triglycerides: </a>
+              <input type="text" id="trig" size="3" maxlength="3"></li>
+              <li>
+              <a href="#" id="bloodpressurecolor">Blood Pressure:</a>
+              <input type="text" size="3" maxlength="3" id="systolic"> / <input type="text" size="3" maxlength="3" id="diastolic">
+              </li>
+              <li><a href="#" id="fastingglucosecolor">Fasting Glucose: </a>
+              <input type="text" size="3" maxlength="3" id="fastingglucose"></li>
+              <li><a href="#" id="BMIcolor">BMI: </a>
+              <input type="text" size="3" maxlength="3" id="BMI"></li>
+              <li><a href="#" id="exercisecolor">Exercise: </a>
+              <input type="text" size="3" maxlength="3" id="exercise"></li>
+              <li><a href="#" id="smokercolor">SMOKER:  </a>
+              <input type="checkbox" id="smoker"></li>
+              <button type="button" onclick="validate()">Submit</button>
+
             </ul>
           </div>
         </div>
@@ -79,6 +134,9 @@
     
   </div>
 </div>
+
+
+<!--               -->
 <div class="footer">
   <div class="copy-rights">CSULA Codeathon,  #FIGHTTHELADYKILLER</div>
 </div>
