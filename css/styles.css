@@ -255,7 +255,7 @@ Banner Styles Start
 	
 }
 .panel-wrapper {
-	width:960px;
+	width:1280px;
 	margin:0 auto;
 	height:auto;
 	overflow:auto;
@@ -540,6 +540,6 @@ input {
 	outline: none;
 }
 
-#data-input, #checklist-info{
+#data-input, #checklist-info, #doclist-info,#tips-info{
 	display: none;
 }
