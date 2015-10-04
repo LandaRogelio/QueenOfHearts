@@ -102,8 +102,7 @@
         tip.innerHTML = "Stop smoking now!!!";
         document.getElementById("smokertip").style.color = "#0000FF";
       }
-	
-    	drawChart();
+
     }
     
     //totalcholesterol, LDL, HDL, trig, systolic, diastolic, fastingglucose, BMI, exercise, smoker
@@ -111,9 +110,9 @@
   	  	
         var data = google.visualization.arrayToDataTable([
           ['datetime', 'Total Cholestrol', 'LDL (Bad) Cholestrol', 'HDL (Good) Cholestrol', 'Triglycerides', 'Systolic Pressure', 'Diastolic Pressure', 'Fasting Glucose', 'BMI', 'Waist (Inches)', 'Excerise (Minutes)'],
-          [new Date(1995, 9, 29), 25, 10, 50, 30, 122, 20, 90, 30, 25, 10],
-          [new Date(2000, 9, 29), 50, 30, 70, 40, 140, 30, 40, 50, 75, 30],
-          [new Date(2005, 9, 29), 70, 50, 20, 50, 160, 40, 60, 10, 55, 40]
+          [new Date(1995, 9, 29), 125, 70, 50, 30, 122, 80, 90, 18, 25, 10],
+          [new Date(2000, 9, 29), 150, 30, 70, 40, 140, 80, 70, 20, 35, 30],
+          [new Date(2005, 9, 29), 170, 50, 100, 50, 160, 80, 60, 20, 25, 40]
         ]);
 
         var options = {
@@ -435,13 +434,18 @@
         </div>
       </div>
       <!-- start table -->
-      	<div id="curve_chart" style="width: 900px; height: 500px"></div>
+            
+      	
 	  <!-- end table -->
       <!-- end heart tracker -->
       <div class="left-column-panel-bottom"></div>
+      
     </div>
+    
   </div>
-</div>    
+  
+</div> 
+<div id="curve_chart" style="width: 900px; height: 500px"></div>  
 </div>
 <div class="footer">
   <div class="copy-rights">CSULA Codeathon,  #FIGHTTHELADYKILLER</div>
@@ -493,6 +497,7 @@ $(document).ready(function(){
     $("#submit-btn").click(function(){
     	$("#data-input").hide();
         $("#curve_chart").show();
+        drawChart();
         $('html,body').animate({
           scrollTop: $("#curve_chart").offset().top
         });
