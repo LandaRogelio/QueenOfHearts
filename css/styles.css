@@ -6,6 +6,7 @@ GLOBALS & GENERAL CASES
 * {
 	margin:0;
 	padding:0;
+	font-family: 'Ubuntu', sans-serif;
 }
 .clear {
 	clear:both;
@@ -37,6 +38,7 @@ Log in components
 	position: absolute;
 	right: 0;
 	top: 0;
+	margin: 10px;
 }
 
 .btn {
@@ -103,7 +105,7 @@ body {
 	width: 100%;
 	height: 50%;
 	font-size: 15px;
-	text-align: center;	
+	text-align: center;
 	padding: 20px;
 }
 .paragraph {
@@ -120,10 +122,52 @@ body {
 }
 .sub_header {
 	margin-top: 20px;
-}		
+}
+
+.Spanish-wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 10px;
+}
 /*-------------------------------------------------
 Logo And Menu Styles Start
 -------------------------------------------------*/
+.background {
+	position: relative;
+}
+
+.background > img {
+	height: 500px;
+	width: 100%;
+}
+
+.logo-heart {
+	position: absolute;
+	top: 5%;
+	left: 0px;
+	margin: 0 auto;
+}
+
+.logo-heart > img {
+	opacity: 0.6;
+	height: 500px;
+}
+
+.brand > p {
+	position: absolute;
+	top: 175px;
+	left: 550px;
+	font-size: 64px;
+	line-height: 75px;
+	font-family: 'Lobster', cursive;
+	color: #C43b31;
+}
+
+.hearts-text {
+	font-family: 'Ubuntu', sans-serif;
+	color: #EF907C;
+}
 
 .logo {
 	width:960px;
@@ -252,7 +296,7 @@ Banner Styles Start
 .panels-container {
 	width:100%;
 	background:url(../images/red-bg.png);
-	
+
 }
 .panel-wrapper {
 	width:1280px;
