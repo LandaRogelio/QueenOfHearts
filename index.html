@@ -7,7 +7,17 @@
 <title>QUEEN OF HEARTS APP</title>
 <link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css' />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+          
 <script type="text/javascript">
+	google.setOnLoadCallback(drawChart);
 
     function clear_fields(){
       document.getElementById("date").value = "";
@@ -51,7 +61,6 @@
         var tip = document.getElementById("trigtip");
         tip.innerHTML = "Trig TIP";
         document.getElementById("trigtip").style.color = "#0000FF";
-
       }
 
       if(document.getElementById("systolic").value > 150 || document.getElementById("diastolic").value > 90){
@@ -93,9 +102,30 @@
         tip.innerHTML = "Stop smoking now!!!";
         document.getElementById("smokertip").style.color = "#0000FF";
       }
-
-    
+	
+    	drawChart();
     }
+    
+    //totalcholesterol, LDL, HDL, trig, systolic, diastolic, fastingglucose, BMI, exercise, smoker
+    function drawChart() {
+  	  	
+        var data = google.visualization.arrayToDataTable([
+          ['datetime', 'Total Cholestrol', 'LDL (Bad) Cholestrol', 'HDL (Good) Cholestrol', 'Triglycerides', 'Systolic Pressure', 'Diastolic Pressure', 'Fasting Glucose', 'BMI', 'Waist (Inches)', 'Excerise (Minutes)'],
+          [new Date(1995, 9, 29), 25, 10, 50, 30, 122, 20, 90, 30, 25, 10],
+          [new Date(2000, 9, 29), 50, 30, 70, 40, 140, 30, 40, 50, 75, 30],
+          [new Date(2005, 9, 29), 70, 50, 20, 50, 160, 40, 60, 10, 55, 40]
+        ]);
+
+        var options = {
+          title: "Patient's Medical Numbers",
+          curveType: 'function',
+          legend: { position: 'right' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
 
 
 </script>
@@ -381,20 +411,21 @@
               <li><a href="#" id="smokercolor">SMOKER:  </a>
               <input type="checkbox" id="smoker"></li>
               <p id="smokertip"></p>
-              <button type="button" onclick="validate()">Submit </button>
+              <button type="button" onclick="validate()" id = "submit-btn">Submit </button>
               <button type="button" onclick="clear_fields()">Clear</button>
 
             </ul>
           </div>
         </div>
       </div>
+      <!-- start table -->
+      	<div id="curve_chart" style="width: 900px; height: 500px"></div>
+	  <!-- end table -->
       <!-- end heart tracker -->
-
       <div class="left-column-panel-bottom"></div>
     </div>
   </div>
-    
-</div>
+</div>    
 </div>
 <div class="footer">
   <div class="copy-rights">CSULA Codeathon,  #FIGHTTHELADYKILLER</div>
@@ -407,6 +438,7 @@ $(document).ready(function(){
         $("#data-input").hide();
         $("#checklist-info").hide();
         $("#doclist-info").hide();
+        $("#curve_chart").hide();
         $("#tips-info").show();
         $('html,body').animate({
           scrollTop: $("#tips-info").offset().top
@@ -417,6 +449,7 @@ $(document).ready(function(){
         $("#checklist-info").hide();
         $("#doclist-info").hide();
         $("#data-input").show();
+        $("#curve_chart").hide();
         $('html,body').animate({
           scrollTop: $("#data-input").offset().top
         });
@@ -426,6 +459,7 @@ $(document).ready(function(){
         $("#data-input").hide();
         $("#checklist-info").hide();
         $("#doclist-info").show();
+        $("#curve_chart").hide();
         $('html,body').animate({
           scrollTop: $("#doclist-info").offset().top
         });
@@ -435,8 +469,16 @@ $(document).ready(function(){
         $("#data-input").hide();
         $("#doclist-info").hide();
         $("#checklist-info").show();
+        $("#curve_chart").hide();
         $('html,body').animate({
           scrollTop: $("#checklist-info").offset().top
+        });
+    });
+    $("#submit-btn").click(function(){
+    	$("#data-input").hide();
+        $("#curve_chart").show();
+        $('html,body').animate({
+          scrollTop: $("#curve_chart").offset().top
         });
     });
 });
