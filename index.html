@@ -7,6 +7,9 @@
 <title>QUEEN OF HEARTS APP</title>
 <link href='http://fonts.googleapis.com/css?family=Trocchi' rel='stylesheet' type='text/css' />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+
 <script type="text/javascript">
 
     function clear_fields(){
@@ -63,7 +66,7 @@
         tip2.innerHTML = "diastolic tip!!!";
         document.getElementById("systolictip").style.color = "#0000FF";
         document.getElementById("diastolictip").style.color = "#0000FF";
-        
+
       }
 
       if(document.getElementById("fastingglucose").value > 99){
@@ -94,7 +97,7 @@
         document.getElementById("smokertip").style.color = "#0000FF";
       }
 
-    
+
     }
 
 
@@ -102,15 +105,22 @@
 </head>
 <body>
 <!-- Log in -->
+<div class="background">
+  <img src="./images/background.jpg"></img>
+</div>
+
+<div class="logo-heart">
+  <img src="./images/logo.png"></img>
+</div>
+
+<div class="brand">
+<p>Queen of <br /><span class="hearts-text">HEARTS</span></p>
+</div>
 <div class="login-wrapper">
 	<div class="btn-group login-group" role="group" aria-label="...">
 		<button type="button" class="btn btn-default" name="signup">Sign up</button>
 		<button type="button" class="btn btn-primary" name="login">Log in</button>
 	</div>
-</div>
-<div class="wrapper">
-  <div class="logo">QUEEN OF HEARTS</div>
-</p>
 </div>
 <div class="panels-container">
   <div class="panel-wrapper">
@@ -163,9 +173,9 @@
   <br/>
   <div class="wrapper">
     <div class="info">
-      <h1>General Information on Cardiovascular Disease (CVD)</h1>  
+      <h1>General Information on Cardiovascular Disease (CVD)</h1>
       <br>
-        
+
       <!-- General Information -->
       <div class="paragraph">
         <p>
@@ -173,13 +183,13 @@
         It claims nearly 400,000 women's lives each year; That's one death every 90 seconds. Nearly half of all women (44%)
         were not aware that CVD is their leading cause of death. Among Black and Hispanic women, 63% and 66%, respectively, were not aware.
         </p>
-          
+
         <br/>
-          
+
         <!-- Image -->
-        <img src="images/women.png" alt="Diverse group of women" height="320" width="520">  
+        <img src="images/women.png" alt="Diverse group of women" height="320" width="520">
       </div>
-        
+
       <!-- Signs and Symptoms of Cardiovascular Disease -->
       <h2 class="sub_header">Signs and Symptoms of CVD</h2>
       <div class="paragraph">
@@ -197,7 +207,7 @@
           </div>
         </p>
       </div>
-        
+
       <!-- Factors That Increase Your Risk for Heart Disease -->
       <h2 class="sub_header">Factors That Increase Your Risk for Heart Disease</h2>
       <div class="paragraph">
@@ -395,12 +405,13 @@
           </div>
         </div>
       </div>
+
       <!-- end heart tracker -->
 
       <div class="left-column-panel-bottom"></div>
     </div>
   </div>
-    
+
 </div>
 </div>
 <div class="footer">
